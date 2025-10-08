@@ -17,7 +17,7 @@ export default function Calculator(){
                 setAnswer(result);
             }catch(e){
                 setInput("");
-                setAnswer("Invalid Operation")
+                setAnswer("Error")
             }
         }else{
             setInput(input + value);
