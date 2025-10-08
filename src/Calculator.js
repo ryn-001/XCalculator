@@ -9,22 +9,20 @@ export default function Calculator() {
         const value = e.target.value;
 
         if (value === "C") {
-            setAnswer(" ");
             setInput("");
         } else if (value === "=") {
-            if (input.trim() === "") {
-                setAnswer("Error")
-                return;
-            } try {
+            try {
+                if (input.trim() === "") throw new Error("empty");
                 const result = eval(input);
-                setAnswer(result);
-            } catch (e) {
-                setInput("");
-                setAnswer("Error")
+                setInput(result.toString());
+            } catch {
+                setInput("Error");
             }
         } else {
-            setInput(input + value);
+            if (input === "Error") setInput("");
+            setInput((prev) => prev + value);
         }
+
     }
 
     return (
