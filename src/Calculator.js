@@ -35,7 +35,7 @@ export default function Calculator() {
 
             <div>
                 <input type="text" className="calculator-input" readOnly value={input} />
-                <div id="result" style={{ padding: "1.5rem", color: "lightgray" }}>{answer}</div>
+                <div id="root" style={{ padding: "1.5rem", color: "lightgray" }}>{answer}</div>
 
                 <div className="buttons">
                     {["7", "8", "9", "+", "4", "5", "6", "-", "1", "2", "3", "*", "C", "0", "=", "/"].map(
