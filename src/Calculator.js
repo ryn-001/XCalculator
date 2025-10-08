@@ -13,16 +13,14 @@ export default function Calculator() {
             setInput("");
         } else if (value === "=") {
             if (input.trim() === "") {
+                setAnswer("Error")
+                return;
+            } try {
+                const result = eval(input);
+                setAnswer(result);
+            } catch (e) {
                 setInput("");
                 setAnswer("Error")
-            } else {
-                try {
-                    const result = eval(input);
-                    setAnswer(result);
-                } catch (e) {
-                    setInput("");
-                    setAnswer("Error")
-                }
             }
         } else {
             setInput(input + value);
