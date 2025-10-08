@@ -16,7 +16,7 @@ export default function Calculator() {
                 const result = eval(input);
                 setInput(result.toString());
             } catch {
-                setInput("Error");
+                setAnswer("Error");
             }
         } else {
             if (input === "Error") setInput("");
