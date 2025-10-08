@@ -12,8 +12,13 @@ export default function Calculator(){
             setAnswer(" ");
             setInput("");
         }else if(value === "="){
-            const result = eval(input);
-            setAnswer(result);
+            try{
+                const result = eval(input);
+                setAnswer(result);
+            }catch(e){
+                setInput("");
+                setAnswer("Invalid Operation")
+            }
         }else{
             setInput(input + value);
         }
