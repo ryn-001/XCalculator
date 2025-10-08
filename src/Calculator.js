@@ -14,7 +14,7 @@ export default function Calculator() {
             try {
                 if (input.trim() === "") throw new Error("empty");
                 const result = eval(input);
-                setInput(result.toString());
+                setAnswer(result.toString());
             } catch {
                 setAnswer("Error");
             }
